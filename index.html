@@ -7,7 +7,7 @@
   <meta name="description" content="Association of Agricultural Officers Kerala (AOAOK) - Departmental Test & Online Mock Exam Portal.">
 
   <!-- Favicon using official emblem -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="https://aoaokeralam.github.io/exam-portal/logo.png">
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -67,16 +67,14 @@
 
   <!-- ==================== EXAM PORTAL LINK CONFIGURATION ==================== -->
   <script>
-    // ⚙️ Change this to your live exam portal URL:
-    const EXAM_PORTAL_URL = "https://your-exam-portal-url.com";
+    // Direct Links to Exam Terminal and Apps Script Backend:
+    const EXAM_PORTAL_URL = "https://aoaokeralam.github.io/exam-portal";
+    const EXAM_PORTAL_CUSTOM_URL = "https://exam.aoaok.in";
+    const GAS_BACKEND_URL = "https://script.google.com/macros/s/AKfycbzviMcGt_P_Zy8HK0asJdyLIKiTalNrkFbtu0qwbea9LvtecG3dhWqOSOkf2a9QjM7K/exec";
 
     function navigateToPortal(e) {
       if (e) e.preventDefault();
-      if (EXAM_PORTAL_URL === "https://your-exam-portal-url.com") {
-        openPortalConfigModal();
-      } else {
-        window.open(EXAM_PORTAL_URL, '_blank', 'noopener,noreferrer');
-      }
+      window.open(EXAM_PORTAL_URL, '_blank', 'noopener,noreferrer');
     }
   </script>
 
@@ -87,7 +85,7 @@
   <header class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="w-11 h-11 rounded-full bg-white p-1 shadow-md flex items-center justify-center shrink-0">
-        <img src="logo.png" alt="AOAOK Official Emblem" class="w-full h-full object-contain" />
+        <img src="https://aoaokeralam.github.io/exam-portal/logo.png" onerror="this.src='logo.png'" alt="AOAOK Official Emblem" class="w-full h-full object-contain" />
       </div>
       <div>
         <span class="font-extrabold text-base sm:text-lg tracking-tight text-white leading-none">AOAOK</span>
@@ -95,14 +93,20 @@
       </div>
     </div>
 
-    <!-- Quick Link Button -->
-    <button onclick="navigateToPortal(event)" class="px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-emerald-200 hover:text-white transition-all flex items-center gap-1.5">
-      <span>Portal Login</span>
-      <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-    </button>
+    <!-- Quick Action Buttons -->
+    <div class="flex items-center gap-2">
+      <button onclick="openRegistrationModal(event)" class="px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-400/40 text-emerald-200 hover:text-white transition-all flex items-center gap-1.5">
+        <i data-lucide="user-plus" class="w-3.5 h-3.5 text-emerald-300"></i>
+        <span>Register</span>
+      </button>
+      <button onclick="navigateToPortal(event)" class="px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-emerald-200 hover:text-white transition-all flex items-center gap-1.5">
+        <span>Portal Login</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Hero Card (Zero Clutter, High Impact) -->
+  <!-- Main Hero Card -->
   <main class="relative z-10 flex-1 flex items-center justify-center px-4 py-6 sm:py-10">
     <div class="max-w-3xl w-full text-center space-y-6 sm:space-y-8">
       
@@ -110,7 +114,7 @@
       <div class="relative inline-block">
         <div class="absolute -inset-3 bg-gradient-to-r from-amber-400/30 to-emerald-400/30 rounded-full blur-xl opacity-75"></div>
         <div class="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto rounded-full bg-white p-2 sm:p-2.5 shadow-2xl border-4 border-emerald-400/30 flex items-center justify-center">
-          <img src="logo.png" alt="Association of Agricultural Officers Kerala Emblem" class="w-full h-full object-contain" />
+          <img src="https://aoaokeralam.github.io/exam-portal/logo.png" onerror="this.src='logo.png'" alt="Association of Agricultural Officers Kerala Emblem" class="w-full h-full object-contain" />
         </div>
       </div>
 
@@ -136,7 +140,7 @@
         </p>
       </div>
 
-      <!-- Core Subject Badges (Compact) -->
+      <!-- Core Subject Badges -->
       <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-lg mx-auto">
         <span class="px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-200 text-xs font-bold flex items-center gap-1.5">
           <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-300"></i> Kerala Service Rules (KSR)
@@ -149,16 +153,21 @@
         </span>
       </div>
 
-      <!-- PRIMARY GIANT CTA: ENTER EXAM PORTAL -->
-      <div class="pt-2 sm:pt-4">
-        <button onclick="navigateToPortal(event)" class="portal-glow group inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-2xl text-brand-dark font-black text-lg sm:text-xl bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-300 hover:from-amber-200 hover:to-yellow-200 transition-all duration-300">
+      <!-- PRIMARY CTA: ENTER EXAM PORTAL -->
+      <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <button onclick="navigateToPortal(event)" class="portal-glow group inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-2xl text-brand-dark font-black text-lg sm:text-xl bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-300 hover:from-amber-200 hover:to-yellow-200 transition-all duration-300 w-full sm:w-auto shadow-xl">
           <i data-lucide="graduation-cap" class="w-6 h-6 sm:w-7 sm:h-7 text-brand-dark group-hover:scale-110 transition-transform"></i>
           <span>ENTER EXAM PORTAL</span>
           <i data-lucide="arrow-right" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-dark group-hover:translate-x-1 transition-transform"></i>
         </button>
+
+        <button onclick="openRegistrationModal(event)" class="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-4 sm:py-4.5 rounded-2xl text-white font-extrabold text-base sm:text-lg bg-emerald-800/80 hover:bg-emerald-700/90 border border-emerald-400/50 hover:border-emerald-300 transition-all duration-300 w-full sm:w-auto shadow-lg backdrop-blur-sm">
+          <i data-lucide="user-plus" class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300 group-hover:scale-110 transition-transform"></i>
+          <span>REGISTER FOR EXAM SERIES</span>
+        </button>
       </div>
 
-      <!-- 3 Key Features (Minimal 1-line badges) -->
+      <!-- 3 Key Features -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto pt-3 text-xs sm:text-xs text-emerald-200/90 font-semibold">
         <div class="flex items-center justify-center gap-1.5 bg-white/5 py-2 px-3 rounded-xl border border-white/10">
           <i data-lucide="timer" class="w-4 h-4 text-amber-300"></i>
@@ -182,81 +191,308 @@
     <p>&copy; <span id="currentYear"></span> Association of Agricultural Officers Kerala (AOAOK). All rights reserved.</p>
     
     <div class="flex items-center gap-4">
-      <button onclick="openPortalConfigModal()" class="text-amber-300 hover:text-white transition-colors underline text-[11px]">
-        Configure Portal URL
+      <button onclick="navigateToPortal(event)" class="text-amber-300 hover:text-white transition-colors underline text-[11px]">
+        Exam Terminal Link
       </button>
       <span class="flex items-center gap-1 text-[11px] text-slate-400">
-        <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Pages
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Official Portal
       </span>
     </div>
   </footer>
 
-  <!-- ==================== PORTAL URL CONFIG MODAL ==================== -->
-  <div id="portalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="relative max-w-md w-full bg-white text-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
+  <!-- ==================== EXAM SERIES REGISTRATION MODAL ==================== -->
+  <div id="registrationModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative max-w-lg w-full bg-white text-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-emerald-500/20 animate-in fade-in zoom-in-95 duration-200">
       
-      <div class="p-4 bg-gradient-to-r from-amber-400 to-amber-500 text-brand-dark flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <i data-lucide="external-link" class="w-5 h-5"></i>
-          <span class="font-extrabold text-sm sm:text-base">Exam Portal URL</span>
+      <!-- Modal Header -->
+      <div class="p-5 bg-gradient-to-r from-emerald-900 via-emerald-800 to-green-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white p-1 shrink-0 flex items-center justify-center shadow">
+            <img src="https://aoaokeralam.github.io/exam-portal/logo.png" onerror="this.src='logo.png'" alt="AOAOK" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <h3 class="font-extrabold text-base leading-tight">Exam Series Registration</h3>
+            <p class="text-xs text-emerald-200 leading-tight">Association of Agricultural Officers Kerala</p>
+          </div>
         </div>
-        <button onclick="closePortalConfigModal()" aria-label="Close modal" class="p-1 rounded-lg text-brand-dark hover:bg-amber-300 transition-colors">
+        <button onclick="closeRegistrationModal()" aria-label="Close modal" class="p-1.5 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <div class="p-5 space-y-4">
-        <p class="text-xs text-slate-600 leading-relaxed">
-          Enter your live exam portal link below or configure it directly in <code class="bg-slate-100 px-1 py-0.5 rounded text-brand-700 font-mono">index.html</code> (line 46: <code class="font-mono">EXAM_PORTAL_URL</code>).
-        </p>
+      <!-- Step 1: Member Verification (Ask PEN First) -->
+      <div id="homeRegStep1" class="p-6 space-y-4">
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5 text-xs sm:text-sm text-emerald-900 leading-relaxed flex items-start gap-2.5">
+          <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="font-bold">AOAOK Member Verification:</strong>
+            <p class="mt-0.5 text-emerald-800">Only verified members of the association can register for departmental mock tests. Please enter your 6-digit PEN below.</p>
+          </div>
+        </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Exam Portal Web Address</label>
-          <input id="portalInputUrl" type="url" placeholder="https://your-exam-portal-link.com" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Permanent Employee Number (PEN) *
+          </label>
+          <input type="text" id="homeRegPEN" placeholder="e.g. 801234" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-600 focus:ring-0 text-base font-bold text-slate-900 placeholder:text-slate-400 placeholder:font-normal uppercase tracking-wider outline-none transition-all">
         </div>
 
-        <div class="flex items-center gap-2 pt-1">
-          <button onclick="saveAndOpenPortal()" class="flex-1 py-2.5 px-4 text-xs font-bold rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-dark shadow-md flex items-center justify-center gap-1.5">
-            <span>Open Exam Portal</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        <div id="homeRegStep1Error" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-medium"></div>
+
+        <button type="button" id="btnHomeVerifyPEN" onclick="handleHomeVerifyPEN()" class="w-full py-3.5 px-4 rounded-xl font-black text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
+          <span>Verify PEN &amp; Continue</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+
+        <div class="pt-2 text-center text-xs text-slate-500">
+          Already registered or opening portal? <a href="#" onclick="openPortalDirectly()" class="text-emerald-700 font-semibold underline">Open Exam Terminal</a>
+        </div>
+      </div>
+
+      <!-- Step 2: Officer Profile & Exam Selection -->
+      <div id="homeRegStep2" class="p-6 space-y-4 hidden">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between">
+          <div>
+            <span class="inline-block px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-1">
+              &#10003; Verified AOAOK Member
+            </span>
+            <h4 id="homeRegNameDisplay" class="font-black text-base text-slate-900 leading-tight"></h4>
+            <p id="homeRegMetaDisplay" class="text-xs text-slate-500 mt-0.5"></p>
+          </div>
+          <i data-lucide="badge-check" class="w-8 h-8 text-emerald-600 shrink-0"></i>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Email Address * <span class="text-[11px] font-semibold text-emerald-700 normal-case">(Credentials will be mailed here on exam day)</span>
+          </label>
+          <input type="email" id="homeRegEmail" placeholder="officer@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-0 text-sm text-slate-900 outline-none transition-all" required>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Select Examination / Series *
+          </label>
+          <select id="homeRegExamSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-0 text-sm text-slate-900 outline-none bg-white font-medium transition-all">
+          </select>
+        </div>
+
+        <div id="homeRegStep2Error" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-medium"></div>
+
+        <div class="flex gap-2.5 pt-2">
+          <button type="button" onclick="backToStep1()" class="py-3 px-4 rounded-xl font-bold text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all">
+            &larr; Back
           </button>
-          <button onclick="closePortalConfigModal()" class="px-4 py-2.5 text-xs font-bold text-slate-600 hover:text-slate-800 rounded-xl border border-slate-200">
-            Cancel
+          <button type="button" id="btnHomeSubmitReg" onclick="handleHomeSubmitRegistration()" class="flex-1 py-3 px-4 rounded-xl font-black text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
+            <span>Complete Registration</span>
+            <i data-lucide="check" class="w-4 h-4"></i>
           </button>
         </div>
+      </div>
+
+      <!-- Step 3: Success Confirmation -->
+      <div id="homeRegStep3" class="p-6 space-y-4 text-center hidden">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-2xl font-black shadow-inner">
+          &#10003;
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-black text-slate-900">Registration Confirmed!</h4>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Official registration details recorded successfully.</p>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-left text-xs sm:text-sm space-y-2">
+          <div class="flex justify-between py-1 border-b border-emerald-100">
+            <span class="text-slate-500">Candidate Name:</span>
+            <strong id="confCandName" class="text-slate-900"></strong>
+          </div>
+          <div class="flex justify-between py-1 border-b border-emerald-100">
+            <span class="text-slate-500">Examination Code:</span>
+            <strong id="confCandCode" class="text-slate-900"></strong>
+          </div>
+          <div class="flex justify-between py-1 border-b border-emerald-100">
+            <span class="text-slate-500">User ID / Roll No:</span>
+            <strong id="confCandUserId" class="text-slate-900 font-mono"></strong>
+          </div>
+          <div class="flex justify-between py-1">
+            <span class="text-slate-500">Access PIN / Password:</span>
+            <strong id="confCandPass" class="text-emerald-700 font-mono text-base"></strong>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 text-left flex items-start gap-2">
+          <i data-lucide="mail" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+          <span><strong>Official Notice:</strong> Your Exam ID, User ID, and Password will also be sent to your registered email on exam day before the test begins.</span>
+        </div>
+
+        <button type="button" onclick="navigateToPortal(event)" class="w-full py-3.5 px-4 rounded-xl font-black text-sm bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-brand-dark shadow-lg transition-all flex items-center justify-center gap-2">
+          <i data-lucide="external-link" class="w-4 h-4 text-brand-dark"></i>
+          <span>Proceed to Exam Terminal</span>
+        </button>
       </div>
 
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Registration JS Logic -->
   <script>
     lucide.createIcons();
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    const portalModal = document.getElementById('portalModal');
-    function openPortalConfigModal() {
-      portalModal.classList.remove('hidden');
-      portalModal.classList.add('flex');
-    }
-    function closePortalConfigModal() {
-      portalModal.classList.add('hidden');
-      portalModal.classList.remove('flex');
-    }
-    portalModal.addEventListener('click', (e) => {
-      if (e.target === portalModal) closePortalConfigModal();
-    });
+    let _currentVerifiedMember = null;
+    let _availablePublicExams = [];
 
-    function saveAndOpenPortal() {
-      const input = document.getElementById('portalInputUrl').value.trim();
-      const targetUrl = input || EXAM_PORTAL_URL;
-      if (targetUrl && targetUrl !== "https://exam.aoaok.in") {
-        window.open(targetUrl, '_blank', 'noopener,noreferrer');
-        closePortalConfigModal();
-      } 
+    function openRegistrationModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('registrationModal').classList.remove('hidden');
+      document.getElementById('registrationModal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeRegistrationModal() {
+      document.getElementById('registrationModal').classList.add('hidden');
+      document.getElementById('registrationModal').classList.remove('flex');
+    }
+
+    function backToStep1() {
+      document.getElementById('homeRegStep2').classList.add('hidden');
+      document.getElementById('homeRegStep1').classList.remove('hidden');
+    }
+
+    function openPortalDirectly() {
+      closeRegistrationModal();
+      navigateToPortal();
+    }
+
+    function handleHomeVerifyPEN() {
+      const penInput = document.getElementById('homeRegPEN');
+      const errEl = document.getElementById('homeRegStep1Error');
+      const btn = document.getElementById('btnHomeVerifyPEN');
+      const pen = (penInput.value || '').trim();
+      errEl.classList.add('hidden');
+
+      if (!pen) {
+        errEl.textContent = 'Please enter your Permanent Employee Number (PEN).';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Verifying Member...</span>';
+
+      const apiUrl = GAS_BACKEND_URL + (GAS_BACKEND_URL.includes('?') ? '&' : '?') + 'action=checkPEN&pen=' + encodeURIComponent(pen);
+
+      fetch(apiUrl)
+        .then(r => r.json())
+        .then(res => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Verify PEN & Continue</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
+          lucide.createIcons();
+
+          if (!res.ok) {
+            errEl.textContent = res.error || 'PEN not found in AOAOK Member Directory.';
+            errEl.classList.remove('hidden');
+            return;
+          }
+
+          _currentVerifiedMember = res.member;
+          _availablePublicExams = res.exams || [];
+
+          document.getElementById('homeRegStep1').classList.add('hidden');
+          document.getElementById('homeRegStep2').classList.remove('hidden');
+
+          document.getElementById('homeRegNameDisplay').textContent = res.member.name;
+          document.getElementById('homeRegMetaDisplay').textContent = res.member.designation + ' | PEN: ' + res.member.pen;
+
+          const sel = document.getElementById('homeRegExamSelect');
+          sel.innerHTML = '';
+          if (!_availablePublicExams.length) {
+            sel.innerHTML = '<option value="">No examinations open for registration currently</option>';
+            document.getElementById('btnHomeSubmitReg').disabled = true;
+          } else {
+            document.getElementById('btnHomeSubmitReg').disabled = false;
+            _availablePublicExams.forEach(x => {
+              const opt = document.createElement('option');
+              opt.value = x.examId;
+              opt.textContent = x.code + ' - ' + x.title + ' (' + x.durationMin + ' Mins)';
+              sel.appendChild(opt);
+            });
+          }
+          lucide.createIcons();
+        })
+        .catch(err => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Verify PEN & Continue</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
+          lucide.createIcons();
+          errEl.innerHTML = 'Unable to reach backend: ' + (err.message || 'Network error') + '<br><a href="' + EXAM_PORTAL_URL + '" target="_blank" class="underline font-bold text-emerald-800 mt-1 inline-block">Click here to register inside the Exam Portal directly &rarr;</a>';
+          errEl.classList.remove('hidden');
+        });
+    }
+
+    function handleHomeSubmitRegistration() {
+      const emailInput = document.getElementById('homeRegEmail');
+      const examSel = document.getElementById('homeRegExamSelect');
+      const errEl = document.getElementById('homeRegStep2Error');
+      const btn = document.getElementById('btnHomeSubmitReg');
+
+      const email = (emailInput.value || '').trim().toLowerCase();
+      const examId = examSel.value;
+      errEl.classList.add('hidden');
+
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        errEl.textContent = 'Please enter a valid Email Address.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+      if (!examId) {
+        errEl.textContent = 'Please select an examination.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Submitting Registration...</span>';
+
+      const apiUrl = GAS_BACKEND_URL + (GAS_BACKEND_URL.includes('?') ? '&' : '?') +
+        'action=registerCandidate&pen=' + encodeURIComponent(_currentVerifiedMember.pen) +
+        '&email=' + encodeURIComponent(email) +
+        '&examId=' + encodeURIComponent(examId);
+
+      fetch(apiUrl)
+        .then(r => r.json())
+        .then(res => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Complete Registration</span><i data-lucide="check" class="w-4 h-4"></i>';
+          lucide.createIcons();
+
+          if (!res.ok) {
+            errEl.textContent = res.error || 'Registration failed.';
+            errEl.classList.remove('hidden');
+            return;
+          }
+
+          document.getElementById('homeRegStep2').classList.add('hidden');
+          document.getElementById('homeRegStep3').classList.remove('hidden');
+
+          document.getElementById('confCandName').textContent = res.candidate.name;
+          document.getElementById('confCandCode').textContent = res.candidate.examCode;
+          document.getElementById('confCandUserId').textContent = res.candidate.userId + ' (' + res.candidate.rollNo + ')';
+          document.getElementById('confCandPass').textContent = res.candidate.plainPass || '(Configured Password)';
+          lucide.createIcons();
+        })
+        .catch(err => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Complete Registration</span><i data-lucide="check" class="w-4 h-4"></i>';
+          lucide.createIcons();
+          errEl.textContent = 'Error: ' + (err.message || 'Could not complete registration.');
+          errEl.classList.remove('hidden');
+        });
+    }
+
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closePortalConfigModal();
+      if (e.key === 'Escape') closeRegistrationModal();
     });
   </script>
+
 </body>
 </html>
