@@ -250,14 +250,10 @@
     function saveAndOpenPortal() {
       const input = document.getElementById('portalInputUrl').value.trim();
       const targetUrl = input || EXAM_PORTAL_URL;
-      if (targetUrl && targetUrl !== "https://your-exam-portal-url.com") {
+      if (targetUrl && targetUrl !== "https://exam.aoaok.in") {
         window.open(targetUrl, '_blank', 'noopener,noreferrer');
         closePortalConfigModal();
-      } else {
-        alert("Please enter a valid URL for your exam portal (e.g. https://your-exam-app.com)");
-      }
-    }
-
+      } 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closePortalConfigModal();
     });
