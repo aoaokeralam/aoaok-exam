@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOAOK | Departmental Test Exam Portal</title>
+  <meta name="description" content="Association of Agricultural Officers Kerala (AOAOK) - Departmental Test & Online Mock Exam Portal.">
+
+  <!-- Favicon using official emblem -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              dark: '#062814'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 20%, #11532c 0%, #08331a 50%, #041c0e 100%);
+    }
+    .portal-glow {
+      box-shadow: 0 0 35px rgba(251, 191, 36, 0.45);
+      animation: pulseGlow 2.5s infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(251, 191, 36, 0.4);
+        transform: translateY(0);
+      }
+      50% {
+        box-shadow: 0 0 45px rgba(251, 191, 36, 0.75);
+        transform: translateY(-2px);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-white font-sans antialiased selection:bg-brand-500 selection:text-white relative overflow-x-hidden">
+
+  <!-- ==================== EXAM PORTAL LINK CONFIGURATION ==================== -->
+  <script>
+    // ⚙️ Change this to your live exam portal URL:
+    const EXAM_PORTAL_URL = "https://your-exam-portal-url.com";
+
+    function navigateToPortal(e) {
+      if (e) e.preventDefault();
+      if (EXAM_PORTAL_URL === "https://your-exam-portal-url.com") {
+        openPortalConfigModal();
+      } else {
+        window.open(EXAM_PORTAL_URL, '_blank', 'noopener,noreferrer');
+      }
+    }
+  </script>
+
+  <!-- Decorative subtle background particles -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+
+  <!-- Minimal Top Header -->
+  <header class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 pt-5 pb-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-full bg-white p-1 shadow-md flex items-center justify-center shrink-0">
+        <img src="assets/logo.png" alt="AOAOK Official Emblem" class="w-full h-full object-contain" />
+      </div>
+      <div>
+        <span class="font-extrabold text-base sm:text-lg tracking-tight text-white leading-none">AOAOK</span>
+        <p class="text-[11px] sm:text-xs text-emerald-300 font-medium leading-none mt-0.5">Association of Agricultural Officers Kerala</p>
+      </div>
+    </div>
+
+    <!-- Quick Link Button -->
+    <button onclick="navigateToPortal(event)" class="px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-emerald-200 hover:text-white transition-all flex items-center gap-1.5">
+      <span>Portal Login</span>
+      <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+    </button>
+  </header>
+
+  <!-- Main Hero Card (Zero Clutter, High Impact) -->
+  <main class="relative z-10 flex-1 flex items-center justify-center px-4 py-6 sm:py-10">
+    <div class="max-w-3xl w-full text-center space-y-6 sm:space-y-8">
+      
+      <!-- Official Emblem Display -->
+      <div class="relative inline-block">
+        <div class="absolute -inset-3 bg-gradient-to-r from-amber-400/30 to-emerald-400/30 rounded-full blur-xl opacity-75"></div>
+        <div class="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto rounded-full bg-white p-2 sm:p-2.5 shadow-2xl border-4 border-emerald-400/30 flex items-center justify-center">
+          <img src="assets/logo.png" alt="Association of Agricultural Officers Kerala Emblem" class="w-full h-full object-contain" />
+        </div>
+      </div>
+
+      <!-- Association Titles -->
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/15 text-xs sm:text-sm font-semibold text-emerald-300">
+          <span>Association of Agricultural Officers Kerala</span>
+        </div>
+        
+        <h2 class="text-xs sm:text-sm font-extrabold tracking-widest uppercase text-amber-300">
+          Together for a Stronger Agricultural Sector
+        </h2>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight pt-1">
+          Departmental Test <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-emerald-200">
+            Exam Portal
+          </span>
+        </h1>
+
+        <p class="text-emerald-100/90 text-sm sm:text-base max-w-xl mx-auto font-normal leading-relaxed pt-1">
+          Online mock examinations and practice tests designed for newly joined Agricultural Officers and departmental test aspirants.
+        </p>
+      </div>
+
+      <!-- Core Subject Badges (Compact) -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-lg mx-auto">
+        <span class="px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-200 text-xs font-bold flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-300"></i> Kerala Service Rules (KSR)
+        </span>
+        <span class="px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-200 text-xs font-bold flex items-center gap-1.5">
+          <i data-lucide="calculator" class="w-3.5 h-3.5 text-amber-300"></i> Kerala Finance Code (KFC)
+        </span>
+        <span class="px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-200 text-xs font-bold flex items-center gap-1.5">
+          <i data-lucide="receipt" class="w-3.5 h-3.5 text-amber-300"></i> Kerala Treasury Code (KTC)
+        </span>
+      </div>
+
+      <!-- PRIMARY GIANT CTA: ENTER EXAM PORTAL -->
+      <div class="pt-2 sm:pt-4">
+        <button onclick="navigateToPortal(event)" class="portal-glow group inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-2xl text-brand-dark font-black text-lg sm:text-xl bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-300 hover:from-amber-200 hover:to-yellow-200 transition-all duration-300">
+          <i data-lucide="graduation-cap" class="w-6 h-6 sm:w-7 sm:h-7 text-brand-dark group-hover:scale-110 transition-transform"></i>
+          <span>ENTER EXAM PORTAL</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-dark group-hover:translate-x-1 transition-transform"></i>
+        </button>
+      </div>
+
+      <!-- 3 Key Features (Minimal 1-line badges) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto pt-3 text-xs sm:text-xs text-emerald-200/90 font-semibold">
+        <div class="flex items-center justify-center gap-1.5 bg-white/5 py-2 px-3 rounded-xl border border-white/10">
+          <i data-lucide="timer" class="w-4 h-4 text-amber-300"></i>
+          <span>Timed Mock Tests</span>
+        </div>
+        <div class="flex items-center justify-center gap-1.5 bg-white/5 py-2 px-3 rounded-xl border border-white/10">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>Instant Score &amp; Answers</span>
+        </div>
+        <div class="flex items-center justify-center gap-1.5 bg-white/5 py-2 px-3 rounded-xl border border-white/10">
+          <i data-lucide="smartphone" class="w-4 h-4 text-blue-300"></i>
+          <span>Mobile &amp; PC Ready</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Clean, Minimal Footer -->
+  <footer class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-300/70 gap-2">
+    <p>&copy; <span id="currentYear"></span> Association of Agricultural Officers Kerala (AOAOK). All rights reserved.</p>
+    
+    <div class="flex items-center gap-4">
+      <button onclick="openPortalConfigModal()" class="text-amber-300 hover:text-white transition-colors underline text-[11px]">
+        Configure Portal URL
+      </button>
+      <span class="flex items-center gap-1 text-[11px] text-slate-400">
+        <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Pages
+      </span>
+    </div>
+  </footer>
+
+  <!-- ==================== PORTAL URL CONFIG MODAL ==================== -->
+  <div id="portalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="relative max-w-md w-full bg-white text-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="p-4 bg-gradient-to-r from-amber-400 to-amber-500 text-brand-dark flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="external-link" class="w-5 h-5"></i>
+          <span class="font-extrabold text-sm sm:text-base">Exam Portal URL</span>
+        </div>
+        <button onclick="closePortalConfigModal()" aria-label="Close modal" class="p-1 rounded-lg text-brand-dark hover:bg-amber-300 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-5 space-y-4">
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Enter your live exam portal link below or configure it directly in <code class="bg-slate-100 px-1 py-0.5 rounded text-brand-700 font-mono">index.html</code> (line 46: <code class="font-mono">EXAM_PORTAL_URL</code>).
+        </p>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Exam Portal Web Address</label>
+          <input id="portalInputUrl" type="url" placeholder="https://your-exam-portal-link.com" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none">
+        </div>
+
+        <div class="flex items-center gap-2 pt-1">
+          <button onclick="saveAndOpenPortal()" class="flex-1 py-2.5 px-4 text-xs font-bold rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-dark shadow-md flex items-center justify-center gap-1.5">
+            <span>Open Exam Portal</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="closePortalConfigModal()" class="px-4 py-2.5 text-xs font-bold text-slate-600 hover:text-slate-800 rounded-xl border border-slate-200">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const portalModal = document.getElementById('portalModal');
+    function openPortalConfigModal() {
+      portalModal.classList.remove('hidden');
+      portalModal.classList.add('flex');
+    }
+    function closePortalConfigModal() {
+      portalModal.classList.add('hidden');
+      portalModal.classList.remove('flex');
+    }
+    portalModal.addEventListener('click', (e) => {
+      if (e.target === portalModal) closePortalConfigModal();
+    });
+
+    function saveAndOpenPortal() {
+      const input = document.getElementById('portalInputUrl').value.trim();
+      const targetUrl = input || EXAM_PORTAL_URL;
+      if (targetUrl && targetUrl !== "https://your-exam-portal-url.com") {
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        closePortalConfigModal();
+      } else {
+        alert("Please enter a valid URL for your exam portal (e.g. https://your-exam-app.com)");
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePortalConfigModal();
+    });
+  </script>
+</body>
+</html>
